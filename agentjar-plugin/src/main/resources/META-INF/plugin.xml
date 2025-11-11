@@ -1,0 +1,39 @@
+<idea-plugin>
+    <id>com.agentjar.plugin</id>
+    <name>AgentJar</name>
+    <vendor email="support@agentjar.dev" url="https://agentjar.dev">AgentJar</vendor>
+    <description>
+        <![CDATA[
+        AgentJar provides agent-driven assistance for enterprise Spring Boot Java development.
+        Features include code generation, scaffolding, conventional commits, and Docker workflows.
+        ]]>
+    </description>
+    
+    <idea-version since-build="243"/>
+    
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+    <depends>Git4Idea</depends>
+    
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="AgentJar" anchor="right" factoryClass="com.agentjar.AgentJarToolWindowFactory"/>
+    </extensions>
+    
+    <actions>
+        <group id="AgentJar.Actions" text="AgentJar" description="AgentJar actions" popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <action id="AgentJar.OpenChat" 
+                    class="com.agentjar.actions.OpenAgentChatAction" 
+                    text="Open Agent Chat" 
+                    description="Open AgentJar tool window"/>
+            <action id="AgentJar.ScaffoldSpringBoot" 
+                    class="com.agentjar.actions.ScaffoldSpringBootAction" 
+                    text="Scaffold Spring Boot Project" 
+                    description="Create a minimal Spring Boot project in the current directory"/>
+            <action id="AgentJar.ConventionalCommit" 
+                    class="com.agentjar.actions.ConventionalCommitAction" 
+                    text="Conventional Commit..." 
+                    description="Create a conventional commit via Git"/>
+        </group>
+    </actions>
+</idea-plugin>
