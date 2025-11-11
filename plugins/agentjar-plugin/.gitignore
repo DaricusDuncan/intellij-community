@@ -1,0 +1,23 @@
+# Gradle
+.gradle/
+build/
+out/
+*.log
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Gradle wrapper JAR (we'll add it explicitly)
+!gradle/wrapper/gradle-wrapper.jar
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.swp
+*.bak
+*~

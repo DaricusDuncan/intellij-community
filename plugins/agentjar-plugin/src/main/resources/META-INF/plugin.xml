@@ -1,0 +1,78 @@
+<idea-plugin>
+    <id>com.agentjar.plugin</id>
+    <name>AgentJar</name>
+    <vendor email="support@agentjar.dev" url="https://agentjar.dev">AgentJar</vendor>
+    
+    <description><![CDATA[
+        <p>AgentJar: Agentic tooling for enterprise Java and Spring Boot development.</p>
+        
+        <p>Features:</p>
+        <ul>
+            <li>AI-powered code assistance and generation</li>
+            <li>Spring Boot project scaffolding and component generation</li>
+            <li>Conventional commit support with automated message generation</li>
+            <li>Docker container integration for builds</li>
+            <li>Model-agnostic agent backends (Ollama, MCP, remote APIs)</li>
+            <li>GitHub integration and automated workflows</li>
+        </ul>
+        
+        <p>AgentJar enhances your Java development workflow with intelligent agents that understand
+        Spring Boot patterns, enterprise best practices, and modern DevOps workflows.</p>
+    ]]></description>
+    
+    <idea-version since-build="243"/>
+    
+    <!-- Core platform dependencies -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
+    <depends>Git4Idea</depends>
+    
+    <!-- Extensions -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Tool Window for Agent Chat -->
+        <toolWindow 
+            id="AgentJar" 
+            anchor="right" 
+            factoryClass="com.agentjar.ui.AgentJarToolWindowFactory"
+            icon="AllIcons.Actions.Lightning"/>
+    </extensions>
+    
+    <!-- Actions -->
+    <actions>
+        <!-- Main Menu Actions -->
+        <group id="AgentJar.Menu" text="AgentJar" description="AgentJar plugin actions">
+            <add-to-group group-id="MainMenu" anchor="after" relative-to-action="ToolsMenu"/>
+            
+            <action 
+                id="AgentJar.OpenChat" 
+                class="com.agentjar.actions.OpenAgentChatAction" 
+                text="Open Agent Chat" 
+                description="Open the AgentJar chat window"/>
+            
+            <separator/>
+            
+            <action 
+                id="AgentJar.ScaffoldSpringBoot" 
+                class="com.agentjar.actions.ScaffoldSpringBootAction" 
+                text="Scaffold Spring Boot Project" 
+                description="Create a minimal Spring Boot project structure"/>
+            
+            <action 
+                id="AgentJar.ConventionalCommit" 
+                class="com.agentjar.actions.ConventionalCommitAction" 
+                text="Create Conventional Commit" 
+                description="Create a Git commit using conventional commit format"/>
+        </group>
+        
+        <!-- Context Menu Actions -->
+        <group id="AgentJar.EditorPopupMenu">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <separator/>
+            <action 
+                id="AgentJar.OpenChatFromEditor" 
+                class="com.agentjar.actions.OpenAgentChatAction" 
+                text="Ask AgentJar" 
+                description="Open AgentJar chat with current context"/>
+        </group>
+    </actions>
+</idea-plugin>
