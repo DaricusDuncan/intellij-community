@@ -80,13 +80,15 @@ com.agentjar/
 ├── actions/           # IDE actions (menu items, shortcuts)
 │   ├── OpenAgentChatAction.kt
 │   ├── ScaffoldSpringBootAction.kt
-│   └── ConventionalCommitAction.kt
-├── services/          # Backend services (coming soon)
-│   ├── AgentBackend.kt
-│   ├── OllamaService.kt
-│   └── MCPService.kt
+│   ├── ConventionalCommitAction.kt
+│   └── GenerateDockerfileAction.kt
+├── services/          # Backend services
+│   ├── AgentBackend.kt (interface)
+│   ├── AgentBackendService.kt (manager + mock implementation)
+│   ├── OllamaService.kt (planned)
+│   └── MCPService.kt (planned)
 └── ui/               # UI components
-    └── AgentJarToolWindowFactory.kt
+    └── AgentJarToolWindowFactory.kt (with async chat)
 ```
 
 ### Roadmap
@@ -97,16 +99,22 @@ com.agentjar/
 - [x] Spring Boot scaffolding action
 - [x] Conventional commit action
 
-#### Phase 2: Agent Backend (In Progress)
-- [ ] Agent backend interface and abstraction
-- [ ] Ollama integration for local models
-- [ ] MCP server support
-- [ ] Remote API support (OpenAI, etc.)
+#### Phase 2: Agent Backend ✅
+- [x] Agent backend interface and abstraction
+- [x] Mock backend for testing and development
+- [x] Async chat with conversation history
+- [x] Code generation and refactoring suggestions
+- [ ] Ollama integration for local models (planned)
+- [ ] MCP server support (planned)
+- [ ] Remote API support (OpenAI, etc.) (planned)
 
-#### Phase 3: Enhanced Features
-- [ ] Docker support (Dockerfile generation, build/run)
+#### Phase 3: Enhanced Features (In Progress)
+- [x] Docker support (Dockerfile generation)
+- [x] Multi-stage Docker builds for Maven and Gradle
+- [x] .dockerignore generation
+- [ ] Docker build/run integration
 - [ ] Spring component generation (controllers, services, repos)
-- [ ] Code refactoring suggestions
+- [ ] Enhanced code refactoring UI
 - [ ] Test generation
 
 #### Phase 4: Security & Enterprise

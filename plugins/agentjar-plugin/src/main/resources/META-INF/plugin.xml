@@ -35,6 +35,9 @@
             anchor="right" 
             factoryClass="com.agentjar.ui.AgentJarToolWindowFactory"
             icon="AllIcons.Actions.Lightning"/>
+        
+        <!-- Services -->
+        <projectService serviceImplementation="com.agentjar.services.AgentBackendService"/>
     </extensions>
     
     <!-- Actions -->
@@ -62,6 +65,14 @@
                 class="com.agentjar.actions.ConventionalCommitAction" 
                 text="Create Conventional Commit" 
                 description="Create a Git commit using conventional commit format"/>
+            
+            <separator/>
+            
+            <action 
+                id="AgentJar.GenerateDockerfile" 
+                class="com.agentjar.actions.GenerateDockerfileAction" 
+                text="Generate Dockerfile" 
+                description="Generate Dockerfile and .dockerignore for Spring Boot application"/>
         </group>
         
         <!-- Context Menu Actions -->
