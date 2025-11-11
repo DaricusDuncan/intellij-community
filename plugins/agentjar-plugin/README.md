@@ -159,12 +159,53 @@ Contributions are welcome! Please feel free to submit issues and pull requests.
 
 This plugin is built on the IntelliJ Platform and follows the same licensing terms.
 
+## Documentation
+
+- **[USAGE.md](USAGE.md)** - Comprehensive user guide with examples
+- **[CONTRIBUTING.md](CONTRIBUTING.md)** - Developer guide for contributors
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** - Technical architecture and design
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history and changes
+
+## Quick Start Guide
+
+### 1. Install the Plugin
+```bash
+cd plugins/agentjar-plugin
+./build-plugin.sh
+```
+Then install the generated ZIP in IntelliJ IDEA.
+
+### 2. Open Agent Chat
+Click the AgentJar tool window on the right side or go to `AgentJar > Open Agent Chat`.
+
+### 3. Try a Command
+Type: "Create a Spring Boot controller" and press Enter.
+
+### 4. Scaffold a Project
+Go to `AgentJar > Scaffold Spring Boot Project` to create a new Spring Boot structure.
+
+### 5. Create a Conventional Commit
+After making changes, use `AgentJar > Create Conventional Commit` for well-formatted commits.
+
 ## Support
 
 For issues and questions:
 - GitHub Issues: https://github.com/DaricusDuncan/intellij-community/issues
 - Email: support@agentjar.dev
+- Documentation: See [USAGE.md](USAGE.md)
+
+## License
+
+This plugin is built on the IntelliJ Platform and follows the same licensing terms as the IntelliJ Community Edition.
+
+## Acknowledgments
+
+- Built with ❤️ for the Java and Spring Boot community
+- Powered by the IntelliJ Platform
+- Inspired by the need for better AI integration in enterprise development
 
 ---
 
 **AgentJar** - Empowering Java developers with intelligent agents 🚀
+
+*"Clean up the mess, build better software."*
