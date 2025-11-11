@@ -1,24 +1,73 @@
 # AgentJar Plugin
 
-AgentJar provides agent-driven assistance for enterprise Spring Boot Java development with integrated model-agnostic agentic capabilities.
+AgentJar is an IntelliJ IDEA plugin providing agent-driven assistance for enterprise Spring Boot Java development with integrated model-agnostic agentic capabilities (local and remote LLMs).
 
-## Features
+## 🎯 Vision
+
+Build a custom IntelliJ Platform-based IDE focused on enterprise Spring Boot Java development with AI-powered code assistance, scaffolding, Git workflows, and Docker integration. Starting as a plugin, evolving into a branded IDE distribution potentially marketable to JetBrains.
+
+## ✨ Current Features
 
 - **Agent Chat Tool Window**: Interactive agent interface for code assistance
 - **Spring Boot Scaffolding**: Quick project setup with standard structure
+  - Creates src/main/java and src/main/resources
+  - Generates application.properties
+  - Creates basic @SpringBootApplication entry point
 - **Conventional Commits**: Git commit helper following conventional commit standards
-- **Docker Workflows**: (Planned) Docker integration for containerized development
-- **Model-Agnostic Agent Layer**: (Planned) Support for local and remote LLMs
+  - Type selection (feat, fix, docs, etc.)
+  - Optional scope
+  - Automatic commit message formatting
 
-## Current Status
+## 📋 Planned Features
 
-This is an early prototype focusing on:
-- Basic plugin infrastructure
-- Tool window with agent interface
-- Spring Boot project scaffolding
-- Conventional commit assistance
+- **Docker Workflows**: Docker integration for containerized development
+- **Model-Agnostic Agent Layer**: Support for Ollama, MCP server, OpenAI, Anthropic
+- **GitHub Integration**: Push, branch management, PR creation
+- **Safe Code Refactoring**: Diff preview before applying changes
+- **Enhanced Scaffolding**: Controllers, services, repositories, REST endpoints
 
-## Roadmap
+## 🚀 Quick Start
+
+See [CONFIGURATION_GUIDE.md](CONFIGURATION_GUIDE.md) for detailed setup instructions.
+
+```bash
+# Build the plugin
+./gradlew build
+
+# Run in development IDE
+./gradlew runIde
+
+# Build distribution
+./gradlew buildPlugin
+```
+
+## 📦 Installation
+
+1. Build the plugin: `./gradlew buildPlugin`
+2. In IntelliJ IDEA: Settings > Plugins > Install Plugin from Disk
+3. Select `build/distributions/agentjar-plugin-0.0.1.zip`
+4. Restart IDE
+
+## 🔧 Usage
+
+### Open Agent Chat
+- **Menu**: Tools > AgentJar > Open Agent Chat
+- **Tool Window**: Find "AgentJar" on the right sidebar
+
+### Scaffold Spring Boot Project
+- **Menu**: Tools > AgentJar > Scaffold Spring Boot Project
+- Creates minimal Spring Boot structure in current project
+
+### Create Conventional Commit
+- **Menu**: Tools > AgentJar > Conventional Commit...
+- Follow prompts to create properly formatted commits
+
+## 📚 Documentation
+
+- [CONFIGURATION_GUIDE.md](CONFIGURATION_GUIDE.md) - Setup and configuration
+- [BUILD_NOTES.md](BUILD_NOTES.md) - Build system details and troubleshooting
+
+## 🗺️ Development Roadmap
 
 ### Immediate Next Steps
 - [ ] Fix Gradle build deprecation warnings
